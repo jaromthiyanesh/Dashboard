@@ -1,0 +1,130 @@
+<tr key={patient.id} className='text-center'>
+                       <td className='border lg:px-4 hidden xl:table-cell lg:py-2  px-2 py-1'>{patient.id}</td>
+                       <td className='border lg:px-4  lg:py-2 px-2 py-1'>{patient.name}</td>
+                       <td className='border lg:px-4 hidden xl:table-cell lg:py-2  px-2 py-1'>{patient.gender}</td>
+                       <td className='border lg:px-4  lg:py-2 px-2 py-1'>{patient.admitDate}</td>
+                       <td className='border lg:px-4  lg:py-2 px-2 py-1'>{patient.disease}</td>
+                       <td className='border lg:px-4 hidden xl:table-cell lg:py-2  px-2 py-1'>{patient.doctor}</td>
+                       <td className='border lg:px-4  lg:py-2 px-2 py-1'>
+                         <button
+                           onClick={() => handleEdit(patient)}
+                           className='mr-2 text-blue-500 hover:text-blue-700'
+                         >
+                           <FontAwesomeIcon icon={faEdit} />
+                         </button>
+                         <button
+                           onClick={() => handleDelete(patient.id)}
+                           className='text-red-500 hover:text-red-700'
+                         >
+                           <FontAwesomeIcon icon={faTrash} />
+                         </button>
+                       </td>
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+                        <div className='flex flex-col justify-center items-center space-y-1 '>
+                <h3 className='font-bold  text-2xl'>Admit Card</h3>
+              </div>
+              <div className='flex flex-col justify-start items-start space-y-1'>
+                <h3 className='font-bold text-xl'>Patient Name</h3>
+                <input
+                  placeholder='Name'
+                  className={`border w-[90%] h-10 p-5 rounded-xl ${
+                    requiredFields.includes('name') ? 'border-red-500' : ''
+                  }`}
+                  type='text'
+                  name='name'
+                  value={newPatient.name}
+                  onChange={handleInputChange}
+                />
+              </div>
+              <div className='flex flex-col justify-start items-start space-y-1'>
+                <h3 className='font-bold text-xl'>Gender</h3>
+                <input
+                  placeholder='Gender'
+                  className={`border w-[90%] h-10 p-5 rounded-xl ${
+                    requiredFields.includes('gender') ? 'border-red-500' : ''
+                  }`}
+                  type='text'
+                  name='gender'
+                  value={newPatient.gender}
+                  onChange={handleInputChange}
+                />
+              </div>
+              <div className='flex flex-col justify-start items-start space-y-1'>
+                <h3 className='font-bold text-xl'>Admit Date</h3>
+                <input
+                  placeholder='Admit Date'
+                  className={`border w-[90%] h-10 p-5 rounded-xl ${
+                    requiredFields.includes('admitDate') ? 'border-red-500' : ''
+                  }`}
+                  type='date'
+                  name='admitDate'
+                  value={newPatient.admitDate}
+                  onChange={handleInputChange}
+                />
+              </div>
+              <div className='flex flex-col justify-start items-start space-y-1'>
+                <h3 className='font-bold text-xl'>Disease</h3>
+                <input
+                  placeholder='Disease'
+                  className={`border w-[90%] h-10 p-5 rounded-xl ${
+                    requiredFields.includes('disease') ? 'border-red-500' : ''
+                  }`}
+                  type='text'
+                  name='disease'
+                  value={newPatient.disease}
+                  onChange={handleInputChange}
+                />
+              </div>
+              <div className='flex flex-col justify-start items-start space-y-1'>
+                <h3 className='font-bold text-xl'>Doctor</h3>
+                <input
+                  placeholder='Doctor'
+                  className={`border w-[90%] h-10 p-5 rounded-xl ${
+                    requiredFields.includes('doctor') ? 'border-red-500' : ''
+                  }`}
+                  type='text'
+                  name='doctor'
+                  value={newPatient.doctor}
+                  onChange={handleInputChange}
+                />
+              </div>
+          
+              <div className='flex justify-center items-center gap-4'>
+                <button
+                  onClick={handleCancel}
+                  className='px-8 py-2 text-white bg-red-600 rounded-full text-xl transform hover:scale-110 transition-transform duration-300 hover:bg-red-600 hover:text-white'
+                >
+                  Cancel
+                </button>
+                <button
+                  onClick={handleSubmit}
+                  className='px-8 py-2 text-white bg-green-600 rounded-full text-xl transform hover:scale-110 transition-transform duration-300 hover:bg-green-600 hover:text-white'
+                >
+                  {editingPatient ? 'Update' : 'Submit'}
+                </button>
+              </div>
+            </div>
+          </div>
